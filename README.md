@@ -1,5 +1,5 @@
 # Author
-Karanthaphong Areerak
+Karanthaphong Areerak 652115001
 # Assignment 1 
 This Assignment is about to use student_list_65.csv which is cvs from excel file to sort about the data of each student in that and it can sort by number of student to make it it want to store the object student by using dynamic array to sort you don't use Scanner in put letter from keyboard but use argument to sort argument n to sort by number argument f to sort by name argument l to sort by lastname
 # Requirement
