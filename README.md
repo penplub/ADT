@@ -6,6 +6,155 @@ This Assignment is about to use student_list_65.csv which is cvs from excel file
 If you want to run this program you want to download student_list65.csv to run and you want to set path fire that link asm.java to Student.java to your pathfile from your computer
 # about the code 
 First you see the program it have a Student.java that is an object to pull that data to main code it have to create a vector to store Student by using dynamic array  that is vector because it can make to write the code easier that don't have vector to store data and usetoken that to make it token about SID firstName lastName to convert into a token and use while .hasnextline to loop taht when it read the student file to the end and token SID firstname lastname and coding to make this program can read the middle name and print the number of all student in this section before show the end of result it want to  create a 2 method about to show the detail of all student and another method is about to sort the student at vector that use collection to sort and come back to main code and use argument to select to sort n to sort by number f to sort by firstname and l to sort by lastname and close the scanner then end of program
+# This is my code of this program
+import java.io.*;
+import java.util.*;
+
+public class asm {
+    public static void main(String[] args) throws FileNotFoundException {
+        Vector<Student> myStudents = new Vector<Student>(); // create vector of student
+        File f = new File("C:/Users/TUF GAMING/Desktop/Assignment1/student_list_65.csv");// set file path and link
+        Scanner myscan = new Scanner(f);
+        StringTokenizer token;// token the student file
+        while (myscan.hasNextLine()) {// if it has next it do that think
+            String dataline = myscan.nextLine();
+            token = new StringTokenizer(dataline, ",");
+            int index = Integer.parseInt(token.nextToken());
+            String SID = token.nextToken();
+            String firstName = token.nextToken();
+            String lastName = "";
+            Student myStudent;
+            if (token.hasMoreTokens()) {// for foreigner that have middle name
+                lastName = token.nextToken();
+                myStudent = new Student(index, SID, firstName, lastName);
+
+            } else {
+                lastName = "";
+                myStudent = new Student(index, SID, firstName);
+
+            }
+            myStudents.add(myStudent);
+
+        }
+        System.out.println("Total student is : " + myStudents.size());// print number of student
+        
+        if (args[0].equals("n")) { // args of n,l,f to sort number name and lastname
+            sort(myStudents, "SID");
+
+            
+        }else if (args[0].equals("f")) {
+            sort(myStudents, "firstName");
+            
+        }else if (args[0].equals("l")) {
+            sort(myStudents, "lastName");
+            
+        }else{
+            System.out.println("error");
+        }
+
+        
+        
+        show(myStudents);
+
+        myscan.close();
+
+    }
+
+    private static void show(Vector<Student> v) { // show all student
+        for (int i = 0; i < v.size(); i++) {
+            System.out.println(v.get(i).toString());
+
+        }
+    }
+
+    public static void sort(Vector<Student> v, final String f) {// to sort the file and select to sort by use f
+        Collections.sort(v, new Comparator<Student>() {
+          
+            @Override
+            public int compare(Student object1, Student object2) {
+                if(f.equals("index")) {
+                    return object1.getIndex().compareTo(object2.getIndex());
+                } else if(f.equals("SID")) {
+                    return object1.getSID().compareTo(object2.getSID());
+                } if(f.equals("firstName")) {
+                    return object1.getFname().compareTo(object2.getFname());
+                } if(f.equals("lastName")) {
+                    if(object1.getLname() == null || object2.getLname() == null)return 0;
+                    return object1.getLname().compareTo(object2.getLname());
+                }
+                return 0;
+            }           
+        });
+    }
+
+}
+# This is an object code for main code 
+  
+public class Student {
+    public static Object getSID;
+     Integer index;
+     String SID;
+     String firstName;
+     String lastName;
+
+    public Student() {
+        this.index = -1;
+        this.SID = "";
+        this.firstName = "";
+        this.lastName = "";
+    }// default constructor
+
+    public Student(int index, String SID, String firstName, String lastName) {
+        this.index = index;
+        this.SID = SID;
+        this.firstName = firstName;
+        this.lastName = lastName;
+
+    }// overload constructor
+
+    public Student(int index, String SID, String firstName) {
+        this.index = index;
+        this.SID = SID;
+        this.firstName = firstName;
+        this.lastName = "";
+
+    }
+    public String getSID(){
+        return this.SID;
+    }
+    public Integer getIndex(){
+        return this.index;
+    }
+    
+
+
+    public String getFname() {
+        return this.firstName;
+    }// return firstname
+
+    public String getLname() {
+        return this.lastName;
+    }
+
+    public void setFname(String f) {
+        this.firstName = f;
+    }
+
+    public void setLname(String l) {
+        this.lastName = l;
+    }
+    public void setSID(String s){
+        this.SID = s;
+    }
+
+    public String toString() {
+        return "[" + this.index + "," + this.SID + "," + this.firstName + "," + this.lastName + "]";
+    }
+
+    public void add(Student myStudent) {
+    }
+}
+  
 # Tutorial of this program 
 If you want to use this program you have to download this program and mystudent_list_65.csv after that you have to set a path to your location where you keep these file and put this file to one folder  Warning you have to set up you augument before run this app because if you don't set set up it can't find your main method to set up you have to write on terminal "javac yourfilepath of your two file asm.java and Student.java" second write"java yourfilepath of your main code" and to run you have to set up select to sort by write this"java yourfile and letter" and of tutorial
 # This is the output of this program 
