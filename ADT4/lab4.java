@@ -1,5 +1,5 @@
 /**
- * lab4
+ * Karanthaphong Areerak 652115001
  */
 public class lab4 {
 
