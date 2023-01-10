@@ -16,9 +16,9 @@ public class lab4 {
         for (int i = 0; i < arr.length; i++) {
             for (int j = 0; j < arr.length; j++) {
                 if(i == j){
-                    System.out.printf("%3s", count);
+                    System.out.printf("%2s", count);
                 }else{
-                    System.out.printf("%3s", arr[i][j]);
+                    System.out.printf("%2s", arr[i][j]);
                 }
             }
             count++;
