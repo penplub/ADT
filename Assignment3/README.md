@@ -2,7 +2,7 @@
 Karanthaphong Areerak 652115001
 # Assignment 3 
 This Assignment is about The program that can convert Infix form to Postfix Form That use stack and linked list by use Node.java and have method push pop peek by reading input1.txt in the terminal and this program can checked that infix form is valid or not 
-#Requirement
+# Requirement
 If you want use program you have to download all of myfile and put it in your folder and please check you computer that you have java in your computer if not you can't use my program
 # Mycode of this program
 //Karanthaphong Areerak 652115001
