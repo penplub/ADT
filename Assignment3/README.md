@@ -210,5 +210,10 @@ public class Node {//
 }
 # About my code
 If you see mu code first you can see that create that created top from Node.java and continue to the main method that throw filenotfoundexception for sonetime not found next check that your args <1 or not(check that have args or not) if it don't have it say Usage java Convert <input_file> and if it have it have to check first that infix is valid or not if it valid it sayInfix "+ infix+" This is valid infix and "Postfix "+postfix if it not valid it says "Invalid infix expression : "+infix next step the code show that set top = null and have method isEmpty that check is it empty or not and next step is going to stack that have push peek and pop and have method that check the precedence and method isOperator that check is it operator or not and have method isValid that can check is it valid or not and this is important infixToPostfix method that method is convert infix to postfix and finally readInfixFromFile that read from terminal and read file Next is Node.java first that create data node that from start set data from input node = null and have method setData setNext that can set data and next and have method getData getNext that return it and have toString to have pattern to print
-#
+# Tutorial
+If you want to use this program ypu have to download all of my file and save it in your folder and first thing you have to do if you want to run this code is compile that file to write this to terminal write javac Convert.java it may created class and then write java Convert input1.txt it will run this code
+# Output
+Infix $a-b/(c+d-e)*(f^g*h+i)$ This is valid infix
+Postfix abcd+e-/fg^h*i+*-
+# End of my Code
 
